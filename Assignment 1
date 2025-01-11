@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+#define MAX_SIZE 100 // Define the maximum size of the matrices
+
+int main() {
+    int rows, cols;
+
+    // Input the number of rows and columns for the matrices
+    printf("Enter the number of rows and columns (e.g., 3 3): ");
+    if (scanf("%d %d", &rows, &cols) != 2 || rows <= 0 || cols <= 0) {
+        printf("Invalid input. Rows and columns must be positive integers.\n");
+        return 1;
+    }
+
+    // Declare matrices with maximum size constraints
+    int matrix1[MAX_SIZE][MAX_SIZE], matrix2[MAX_SIZE][MAX_SIZE], result[MAX_SIZE][MAX_SIZE];
+
+    // Input elements of the first matrix
+    printf("Enter the elements of the first matrix (%d x %d):\n", rows, cols);
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("Element [%d][%d]: ", i + 1, j + 1);
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+
+    // Input elements of the second matrix
+    printf("Enter the elements of the second matrix (%d x %d):\n", rows, cols);
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("Element [%d][%d]: ", i + 1, j + 1);
+            scanf("%d", &matrix2[i][j]);
+        }
+    }
+
+    // Calculate the sum of the matrices
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            result[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+
+    // Display the resulting matrix
+    printf("Sum of the matrices (%d x %d):\n", rows, cols);
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
