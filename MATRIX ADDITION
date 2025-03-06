@@ -1,0 +1,180 @@
+// ########
+//S.JAYA VARSHINI 
+//24011501008
+//MTECH AI & DS
+//SNU 
+// ########
+
+
+
+#include <iostream>
+#include <vector>
+#include <cstdlib>  // For random number generation
+#include <ctime>    // For seeding random number generator
+
+using namespace std;
+
+// Define the size of the matrix as 2^9
+const int SIZE = 1 << 9;  // Equivalent to 2^9
+
+// Function to generate random numbers in a given range
+int generateRandomValue(int lower, int upper) {
+    return lower + rand() % (upper - lower + 1);
+}
+
+int main() {
+    // Seed the random number generator to get different results each time
+    srand(static_cast<unsigned int>(time(0)));
+
+    // Create matrices A, B, and C
+    vector<vector<int>> A(SIZE, vector<int>(SIZE));
+    vector<vector<int>> B(SIZE, vector<int>(SIZE));
+    vector<vector<int>> C(SIZE, vector<int>(SIZE));
+
+    // Initialize matrices A and B with random values in the range of 0 to 100
+    for (int i = 0; i < SIZE; ++i) {
+        for (int j = 0; j < SIZE; ++j) {
+            A[i][j] = generateRandomValue(0, 100);  // Random values between 0 and 100
+            B[i][j] = generateRandomValue(0, 100);  // Random values between 0 and 100
+        }
+    }
+
+    // Perform matrix addition (C = A + B)
+    for (int i = 0; i < SIZE; ++i) {
+        for (int j = 0; j < SIZE; ++j) {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+
+    // Print a small portion of the result to verify (for large matrices, print only a part)
+    cout << "Result matrix C (first 5x5 elements):\n";
+    for (int i = 0; i < 5; ++i) {
+        for (int j = 0; j < 5; ++j) {
+            cout << C[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
